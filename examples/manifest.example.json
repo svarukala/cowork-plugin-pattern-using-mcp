@@ -1,0 +1,49 @@
+{
+  "$schema": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
+  "manifestVersion": "1.28",
+  "version": "1.0.0",
+  "id": "11111111-2222-4333-8444-555555555555",
+  "developer": {
+    "name": "Contoso",
+    "websiteUrl": "https://contoso.example.com",
+    "privacyUrl": "https://contoso.example.com/privacy",
+    "termsOfUseUrl": "https://contoso.example.com/terms"
+  },
+  "name": {
+    "short": "Contoso Catalog",
+    "full": "Contoso Catalog for Copilot Cowork"
+  },
+  "description": {
+    "short": "Read approved catalog records.",
+    "full": "Look up approved catalog records through a read-only MCP connector with Microsoft Entra SSO."
+  },
+  "icons": {
+    "color": "color.png",
+    "outline": "outline.png"
+  },
+  "accentColor": "#0078D4",
+  "agentSkills": [
+    {
+      "folder": "skills/catalog-lookup"
+    }
+  ],
+  "agentConnectors": [
+    {
+      "id": "catalog-mcp",
+      "displayName": "Contoso Catalog",
+      "description": "Read approved catalog records.",
+      "toolSource": {
+        "remoteMcpServer": {
+          "mcpServerUrl": "https://gateway.example.com/mcp",
+          "mcpToolDescription": {
+            "file": "tools/catalog-tools.json"
+          },
+          "authorization": {
+            "type": "OAuthPluginVault",
+            "referenceId": "REPLACE_WITH_SSO_REGISTRATION_ID"
+          }
+        }
+      }
+    }
+  ]
+}

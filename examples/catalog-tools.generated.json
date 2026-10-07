@@ -1,0 +1,46 @@
+{
+  "tools": [
+    {
+      "name": "catalog_get_record",
+      "description": "Look up one approved catalog record by its exact identifier.",
+      "inputSchema": {
+        "$defs": {
+          "LookupInput": {
+            "additionalProperties": false,
+            "properties": {
+              "record_id": {
+                "maxLength": 64,
+                "minLength": 1,
+                "pattern": "^[A-Za-z0-9_-]+$",
+                "title": "Record Id",
+                "type": "string"
+              }
+            },
+            "required": [
+              "record_id"
+            ],
+            "title": "LookupInput",
+            "type": "object"
+          }
+        },
+        "properties": {
+          "params": {
+            "$ref": "#/$defs/LookupInput"
+          }
+        },
+        "required": [
+          "params"
+        ],
+        "title": "catalog_get_recordArguments",
+        "type": "object"
+      },
+      "annotations": {
+        "title": "Get catalog record",
+        "readOnlyHint": true,
+        "destructiveHint": false,
+        "idempotentHint": true,
+        "openWorldHint": true
+      }
+    }
+  ]
+}

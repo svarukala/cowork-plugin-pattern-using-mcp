@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="2600" height="2020" viewBox="0 0 2600 2020" role="img" aria-labelledby="title desc">
+<title id="title">Cowork MCP | Network and identity architecture</title>
+<desc id="desc">Public APIM reaches a private Container Apps environment. The adapter calls an LOB API, optionally retrieves its key through a private Key Vault endpoint, and uses managed identity to pull its image. APIM and the adapter need outbound access to Entra signing keys.</desc>
+<rect width="100%" height="100%" fill="white"/>
+<text x="65" y="84.56" font-family="Arial, Helvetica, sans-serif" font-size="43" font-weight="700" fill="#000000">Cowork MCP | Network and identity architecture</text>
+<text x="65" y="142.84" font-family="Arial, Helvetica, sans-serif" font-size="27" font-weight="400" fill="#000000">Example deployment | Azure public cloud | Other adapter hosts work | Illustrative subnets</text>
+<rect x="65" y="195" width="2470" height="95" rx="16" fill="#E8DAEF" stroke="#5C2D91" stroke-width="3"/>
+<text x="89" y="246.705" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#000000">Secretless SSO authenticates the user; managed identity authenticates the Azure workload.</text>
+<rect x="100" y="345" width="495" height="190" rx="16" fill="#CFE4FA" stroke="#0078D4" stroke-width="3"/>
+<text x="124" y="403.47" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#000000">Microsoft 365 Copilot Cowork</text>
+<text x="124" y="443.77000000000004" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#000000">v1.28 plugin + OAuthPluginVault</text>
+<text x="124" y="484.07000000000005" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="400" fill="#000000">Public gateway: HTTPS /mcp</text>
+<rect x="780" y="335" width="835" height="205" rx="16" fill="#E8DAEF" stroke="#5C2D91" stroke-width="3"/>
+<text x="804" y="402.375" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Microsoft Entra ID + Enterprise token store</text>
+<text x="804" y="441.125" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">Resource app + SSO auth config; no client secret</text>
+<text x="804" y="479.875" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">Delegated scope; token-store client preauthorized</text>
+<polyline points="780,432 605,432" fill="none" stroke="#5C2D91" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="605,432 622.2703492438228,424.07945475384497 622.2703492438228,439.92054524615503" fill="#5C2D91"/>
+<rect x="2050" y="345" width="480" height="190" rx="16" fill="#CFE4FA" stroke="#0078D4" stroke-width="3"/>
+<text x="2074" y="406.28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">LOB API</text>
+<text x="2074" y="443.47999999999996" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">HTTPS endpoint</text>
+<text x="2074" y="480.68" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Backend key if required; no user JWT</text>
+<rect x="65" y="630" width="2470" height="1190" rx="16" fill="none" stroke="#495057" stroke-width="3"/>
+<text x="90" y="678.76" font-family="Arial, Helvetica, sans-serif" font-size="28" font-weight="700" fill="#000000">Customer Azure subscription | solution-owned resources</text>
+<rect x="100" y="735" width="1785" height="665" rx="16" fill="none" stroke="#0078D4" stroke-width="3"/>
+<text x="125" y="784.68" font-family="Arial, Helvetica, sans-serif" font-size="29" font-weight="700" fill="#000000">Virtual network | example 10.0.0.0/16</text>
+<rect x="135" y="835" width="455" height="510" rx="16" fill="none" stroke="#0078D4" stroke-width="3"/>
+<text x="160" y="881.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">APIM subnet | 10.0.1.0/24</text>
+<rect x="695" y="835" width="735" height="510" rx="16" fill="none" stroke="#0078D4" stroke-width="3"/>
+<text x="720" y="881.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Container Apps subnet | 10.0.2.0/24</text>
+<text x="720" y="913.24" font-family="Arial, Helvetica, sans-serif" font-size="22" font-weight="400" fill="#000000">Dedicated subnet delegated to Microsoft.App/environments</text>
+<rect x="1515" y="835" width="330" height="510" rx="16" fill="none" stroke="#5C2D91" stroke-width="3"/>
+<text x="1540" y="881.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Private endpoints</text>
+<text x="1540" y="915.16" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#000000">Example 10.0.3.0/24</text>
+<rect x="165" y="965" width="395" height="270" rx="16" fill="#CFE4FA" stroke="#0078D4" stroke-width="3"/>
+<text x="189" y="1026.125" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Public APIM gateway</text>
+<text x="189" y="1064.875" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">External VNet topology</text>
+<text x="189" y="1103.625" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">Entra token validation</text>
+<text x="189" y="1142.375" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">Private backend route</text>
+<text x="189" y="1181.125" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">No body buffering</text>
+<rect x="720" y="945" width="685" height="375" rx="16" fill="none" stroke="#0078D4" stroke-width="3"/>
+<text x="745" y="991.92" font-family="Arial, Helvetica, sans-serif" font-size="26" font-weight="700" fill="#000000">INTERNAL Container Apps environment</text>
+<rect x="760" y="1020" width="605" height="95" rx="16" fill="#CFE4FA" stroke="#0078D4" stroke-width="3"/>
+<text x="784" y="1070.98" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">Internal ingress | private VIP | HTTPS 443</text>
+<rect x="760" y="1170" width="605" height="115" rx="16" fill="#DFF6DD" stroke="#107C10" stroke-width="3"/>
+<text x="784" y="1216.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">Private Python MCP adapter | HTTP 8000</text>
+<text x="784" y="1253.28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Independent JWT and tool-permission checks</text>
+<rect x="1540" y="1135" width="280" height="140" rx="16" fill="#E8DAEF" stroke="#5C2D91" stroke-width="3"/>
+<text x="1564" y="1180.16" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">Key Vault PE</text>
+<text x="1564" y="1215.8100000000002" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#000000">Private IP</text>
+<text x="1564" y="1251.46" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#000000">API-key variant</text>
+<rect x="2050" y="1115" width="455" height="180" rx="16" fill="#E8DAEF" stroke="#5C2D91" stroke-width="3"/>
+<text x="2074" y="1172.6850000000002" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="700" fill="#000000">Key Vault (conditional)</text>
+<text x="2074" y="1208.3350000000003" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#000000">Backend API key only</text>
+<text x="2074" y="1243.9850000000001" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#000000">Private access + secret-scoped RBAC</text>
+<polyline points="200,535 200,605 40,605 40,1060 155,1060" fill="none" stroke="#0078D4" stroke-width="4"/>
+<polygon points="155,1060 137.7296507561772,1067.920545246155 137.7296507561772,1052.079454753845" fill="#0078D4"/>
+<text x="250" y="585.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">1 | Public HTTPS 443</text>
+<polyline points="560,1060 750,1060" fill="none" stroke="#0078D4" stroke-width="4"/>
+<polygon points="750,1060 732.7296507561772,1067.920545246155 732.7296507561772,1052.079454753845" fill="#0078D4"/>
+<polyline points="750,1093 570,1093" fill="none" stroke="#107C10" stroke-width="4"/>
+<polygon points="570,1093 587.2703492438228,1085.079454753845 587.2703492438228,1100.920545246155" fill="#107C10"/>
+<text x="600" y="972.32" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#000000">2 | Same</text>
+<text x="600" y="1004.32" font-family="Arial, Helvetica, sans-serif" font-size="21" font-weight="400" fill="#000000">user JWT</text>
+<polyline points="1050,1115 1050,1160" fill="none" stroke="#0078D4" stroke-width="4"/>
+<polygon points="1050,1160 1042.079454753845,1142.729650756177 1057.920545246155,1142.729650756177" fill="#0078D4"/>
+<polyline points="1120,1170 1120,1125" fill="none" stroke="#107C10" stroke-width="4"/>
+<polygon points="1120,1125 1127.920545246155,1142.270349243823 1112.079454753845,1142.270349243823" fill="#107C10"/>
+<polyline points="1365,1265 1530,1265" fill="none" stroke="#5C2D91" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="1530,1265 1512.729650756177,1272.920545246155 1512.729650756177,1257.079454753845" fill="#5C2D91"/>
+<polyline points="1820,1210 2040,1210" fill="none" stroke="#5C2D91" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="2040,1210 2022.729650756177,1217.920545246155 2022.729650756177,1202.079454753845" fill="#5C2D91"/>
+<text x="1880" y="1171.16" font-family="Arial, Helvetica, sans-serif" font-size="23" font-weight="400" fill="#000000">Private Link</text>
+<text x="1538" y="1308.4" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="400" fill="#000000">3 | Identity-based read</text>
+<polyline points="1365,1200 1470,1200 1470,580 2290,580 2290,545" fill="none" stroke="#0078D4" stroke-width="4"/>
+<polygon points="2290,545 2297.920545246155,562.2703492438228 2282.079454753845,562.2703492438228" fill="#0078D4"/>
+<polyline points="2350,545 2350,610 1505,610 1505,1240 1375,1240" fill="none" stroke="#107C10" stroke-width="4"/>
+<polygon points="1375,1240 1392.270349243823,1232.079454753845 1392.270349243823,1247.920545246155" fill="#107C10"/>
+<text x="1660" y="570.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">4 | Direct HTTPS to LOB API</text>
+<rect x="135" y="1455" width="865" height="150" rx="16" fill="#CFE4FA" stroke="#0078D4" stroke-width="3"/>
+<text x="159" y="1501.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">Private DNS | zones linked to the VNet</text>
+<text x="159" y="1538.28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Environment default domain: * and @ to private VIP</text>
+<text x="159" y="1575.48" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">privatelink.vaultcore.azure.net for the API-key variant</text>
+<rect x="1090" y="1455" width="690" height="150" rx="16" fill="#E8DAEF" stroke="#5C2D91" stroke-width="3"/>
+<text x="1114" y="1501.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">User-assigned managed identity</text>
+<text x="1114" y="1538.28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Attached to adapter; not an extra network hop</text>
+<text x="1114" y="1575.48" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Registry pull + Key Vault read (when needed)</text>
+<polyline points="1310,1455 1310,1408 1260,1408 1260,1295" fill="none" stroke="#5C2D91" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="1260,1295 1267.920545246155,1312.270349243823 1252.079454753845,1312.270349243823" fill="#5C2D91"/>
+<rect x="2050" y="1455" width="455" height="150" rx="16" fill="#F3F2F1" stroke="#495057" stroke-width="3"/>
+<text x="2074" y="1501.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="700" fill="#000000">Container Registry</text>
+<text x="2074" y="1538.28" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Identity-based image pull</text>
+<text x="2074" y="1575.48" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Authenticated HTTPS endpoint</text>
+<polyline points="1780,1490 2010,1490 2010,1505 2040,1505" fill="none" stroke="#5C2D91" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="2040,1505 2022.729650756177,1512.920545246155 2022.729650756177,1497.079454753845" fill="#5C2D91"/>
+<rect x="135" y="1660" width="1645" height="115" rx="16" fill="#F3F2F1" stroke="#495057" stroke-width="3"/>
+<text x="159" y="1707.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="700" fill="#000000">Application Insights + Log Analytics</text>
+<text x="159" y="1745.75" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">Sanitized status, correlation and latency; no prompt, token, key, or response-body capture</text>
+<polyline points="560,1210 630,1210 630,1410 1020,1410 1020,1630 460,1630 460,1650" fill="none" stroke="#495057" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="460,1650 452.07945475384497,1632.729650756177 467.92054524615503,1632.729650756177" fill="#495057"/>
+<polyline points="850,1285 850,1425 1040,1425 1040,1650" fill="none" stroke="#495057" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="1040,1650 1032.079454753845,1632.729650756177 1047.920545246155,1632.729650756177" fill="#495057"/>
+<text x="1900" y="1702.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Preserve platform-managed resources.</text>
+<text x="1900" y="1742.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Egress via NAT gateway or firewall.</text>
+<text x="100" y="1873.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">App ingress is VNet-visible within an internal environment; allow only the APIM subnet. Platform probes remain permitted.</text>
+<text x="100" y="1913.0" font-family="Arial, Helvetica, sans-serif" font-size="25" font-weight="400" fill="#000000">Allow outbound HTTPS from APIM and the adapter to Entra (signing keys), plus the LOB API, registry, and platform dependencies.</text>
+<polyline points="65,1955 140,1955" fill="none" stroke="#0078D4" stroke-width="4"/>
+<polygon points="140,1955 122.72965075617718,1962.920545246155 122.72965075617718,1947.079454753845" fill="#0078D4"/>
+<text x="160" y="1962.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Request</text>
+<polyline points="370,1955 445,1955" fill="none" stroke="#107C10" stroke-width="4"/>
+<polygon points="445,1955 427.7296507561772,1962.920545246155 427.7296507561772,1947.079454753845" fill="#107C10"/>
+<text x="465" y="1962.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Result / response</text>
+<polyline points="820,1955 895,1955" fill="none" stroke="#5C2D91" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="895,1955 877.7296507561772,1962.920545246155 877.7296507561772,1947.079454753845" fill="#5C2D91"/>
+<text x="915" y="1962.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Identity / dependency</text>
+<polyline points="1370,1955 1445,1955" fill="none" stroke="#495057" stroke-width="4" stroke-dasharray="12 8"/>
+<polygon points="1445,1955 1427.729650756177,1962.920545246155 1427.729650756177,1947.079454753845" fill="#495057"/>
+<text x="1465" y="1962.08" font-family="Arial, Helvetica, sans-serif" font-size="24" font-weight="400" fill="#000000">Sanitized telemetry</text>
+</svg>

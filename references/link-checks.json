@@ -1,0 +1,67 @@
+[
+  {
+    "url": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json",
+    "status": 200,
+    "finalUrl": "https://developer.microsoft.com/json-schemas/teams/v1.28/MicrosoftTeams.schema.json"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/expose-existing-mcp-server",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/api-management/expose-existing-mcp-server"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/secure-mcp-servers",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/api-management/secure-mcp-servers"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/validate-azure-ad-token-policy",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/api-management/validate-azure-ad-token-policy"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/api-management/validate-jwt-policy"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/managed-identity",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/managed-identity"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/container-apps/networking",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/container-apps/networking"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/azure/key-vault/general/rbac-guide"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/entra/identity-platform/access-token-claims-reference"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication"
+  },
+  {
+    "url": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-entra-sso",
+    "status": 200,
+    "finalUrl": "https://learn.microsoft.com/en-us/microsoft-365/copilot/extensibility/plugin-authentication-entra-sso"
+  }
+]

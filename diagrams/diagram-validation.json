@@ -1,0 +1,26 @@
+[
+  {
+    "name": "cowork-mcp-data-flow",
+    "dimensions": [
+      2460,
+      1470
+    ],
+    "elements": 79,
+    "textBoundsChecked": true,
+    "svgParsed": true,
+    "rendering": "SVG and Pillow PNG from identical geometry; editable Excalidraw source",
+    "excalidrawEditorRoundTripTested": false
+  },
+  {
+    "name": "cowork-mcp-network",
+    "dimensions": [
+      2600,
+      2020
+    ],
+    "elements": 96,
+    "textBoundsChecked": true,
+    "svgParsed": true,
+    "rendering": "SVG and Pillow PNG from identical geometry; editable Excalidraw source",
+    "excalidrawEditorRoundTripTested": false
+  }
+]

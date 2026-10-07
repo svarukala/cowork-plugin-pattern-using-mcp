@@ -1,0 +1,15 @@
+{
+  "tenantId": "REPLACE_WITH_TENANT_ID",
+  "apiClientId": "REPLACE_WITH_API_CLIENT_ID",
+  "ssoApplicationIdUri": "REPLACE_WITH_EXACT_SSO_APPLICATION_ID_URI",
+  "allowedClientIds": [
+    "ab3be6b7-f5df-413d-ac2d-abf1e3fd9c0b"
+  ],
+  "requiredScope": "catalog.read",
+  "publicMcpUrl": "https://gateway.example.com/mcp",
+  "managedIdentityClientId": "REPLACE_WITH_MANAGED_IDENTITY_CLIENT_ID",
+  "vaultUrl": "https://REPLACE-WITH-VAULT-NAME.vault.azure.net",
+  "backendSecretName": "catalog-api-key",
+  "backendOrigin": "https://catalog.example.com",
+  "gatewayNetworkRestricted": true
+}

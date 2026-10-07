@@ -1,0 +1,60 @@
+<policies>
+  <inbound>
+    <base />
+    <validate-azure-ad-token tenant-id="__TENANT_ID__" header-name="Authorization" failed-validation-httpcode="401" failed-validation-error-message="Unauthorized" output-token-variable-name="validatedJwt">
+      <client-application-ids>
+        <application-id>ab3be6b7-f5df-413d-ac2d-abf1e3fd9c0b</application-id>
+      </client-application-ids>
+      <audiences>
+        <audience>__API_CLIENT_ID__</audience>
+        <audience>__SSO_APPLICATION_ID_URI__</audience>
+      </audiences>
+      <required-claims>
+        <claim name="tid" match="all"><value>__TENANT_ID__</value></claim>
+        <claim name="ver" match="all"><value>2.0</value></claim>
+        <claim name="scp" match="all" separator=" "><value>catalog.read</value></claim>
+      </required-claims>
+    </validate-azure-ad-token>
+    <rate-limit-by-key calls="30" renewal-period="60" counter-key='@(((Jwt)context.Variables["validatedJwt"]).Claims["tid"][0] + ":" + ((Jwt)context.Variables["validatedJwt"]).Claims["oid"][0])' />
+    <rewrite-uri template="/mcp" copy-unmatched-params="false" />
+  </inbound>
+  <backend>
+    <forward-request timeout="30" buffer-request-body="false" buffer-response="false" />
+  </backend>
+  <outbound>
+    <base />
+    <set-header name="Strict-Transport-Security" exists-action="override">
+      <value>max-age=31536000</value>
+    </set-header>
+  </outbound>
+  <on-error>
+    <base />
+    <choose>
+      <when condition='@(context.LastError.Source == "validate-azure-ad-token")'>
+        <return-response>
+          <set-status code="401" reason="Unauthorized" />
+          <set-header name="Content-Type" exists-action="override"><value>application/json</value></set-header>
+          <set-header name="WWW-Authenticate" exists-action="override">
+            <value>Bearer resource_metadata="https://__GATEWAY_HOST__/.well-known/oauth-protected-resource/mcp", scope="__SSO_APPLICATION_ID_URI__/catalog.read"</value>
+          </set-header>
+          <set-body>{"error":"unauthorized"}</set-body>
+        </return-response>
+      </when>
+      <when condition='@(context.LastError.Reason == "RateLimitExceeded")'>
+        <return-response>
+          <set-status code="429" reason="Too Many Requests" />
+          <set-header name="Content-Type" exists-action="override"><value>application/json</value></set-header>
+          <set-header name="Retry-After" exists-action="override"><value>60</value></set-header>
+          <set-body>{"error":"rate_limited"}</set-body>
+        </return-response>
+      </when>
+      <otherwise>
+        <return-response>
+          <set-status code="502" reason="Bad Gateway" />
+          <set-header name="Content-Type" exists-action="override"><value>application/json</value></set-header>
+          <set-body>{"error":"gateway_unavailable"}</set-body>
+        </return-response>
+      </otherwise>
+    </choose>
+  </on-error>
+</policies>

@@ -1,0 +1,12 @@
+{
+  "resource": "https://gateway.example.com/mcp",
+  "authorization_servers": [
+    "https://login.microsoftonline.com/REPLACE_WITH_TENANT_ID/v2.0"
+  ],
+  "scopes_supported": [
+    "REPLACE_WITH_EXACT_SSO_APPLICATION_ID_URI/catalog.read"
+  ],
+  "bearer_methods_supported": [
+    "header"
+  ]
+}

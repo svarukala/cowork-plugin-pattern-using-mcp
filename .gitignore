@@ -1,0 +1,5 @@
+.venv/
+.validation-venv/
+__pycache__/
+*.pyc
+
