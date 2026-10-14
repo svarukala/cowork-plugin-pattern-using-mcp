@@ -25,9 +25,9 @@ Start with how your existing backend authenticates. In every case, the URL that 
 
 | Your backend | What to do |
 | --- | --- |
-| **REST API that uses an API key** | **Use this pattern.** If your operations are simple and already return suitable results, you can use [APIM's REST-to-MCP export](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server) instead of a custom adapter. |
+| **REST API that uses an API key** (in a header or query string) | **Use this pattern.** If your operations are simple and already return suitable results, you can use [APIM's REST-to-MCP export](https://learn.microsoft.com/en-us/azure/api-management/export-rest-mcp-server) instead of a custom adapter. |
 | **REST API protected by Microsoft Entra ID** | Use this pattern, because Cowork needs an MCP endpoint. The adapter calls the API with its managed identity, or with an [on-behalf-of](https://learn.microsoft.com/en-us/entra/identity-platform/v2-oauth2-on-behalf-of-flow) token if the API must know the user. It doesn't need Key Vault. |
-| **MCP server that uses an API key** | Keep your server. Put an [APIM MCP proxy](https://learn.microsoft.com/en-us/azure/api-management/expose-existing-mcp-server) in front of it to validate Entra tokens and add the key. You don't need a custom adapter. |
+| **MCP server that uses an API key** | Keep your server. Put an [APIM MCP proxy](https://learn.microsoft.com/en-us/azure/api-management/expose-existing-mcp-server) in front of it to validate Entra tokens and add the key as a header or query parameter. You don't need a custom adapter. |
 | **MCP server protected by Microsoft Entra ID** | You don't need this pattern. Configure Entra SSO and point the plugin at your server. Add APIM only if you want central policies, rate limits, or private networking. |
 
 ## How it works
@@ -121,6 +121,7 @@ The registration isn't complete until your Entra app trusts it. Go back to the a
 
 - Expose specific, read-only tools, such as *get catalog record by ID*. Don't expose a general "fetch any URL" tool.
 - Validate inputs, call a fixed LOB API address, and limit time and response size.
+- Send the API key the way the LOB API expects it: in a request header (for example, `x-api-key`) or in a query string parameter (for example, `?api_key=`). Prefer a header when the API supports both. Query strings can be recorded in URL logs, so never log the full upstream URL.
 - Return a clear error when something fails, rather than an empty result.
 - Set `readOnlyHint: true`, `destructiveHint: false`, and a `title` on each read-only tool. Cowork shows the title, and can ask users to confirm tools that aren't marked read-only.
 
