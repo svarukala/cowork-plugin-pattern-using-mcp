@@ -1,11 +1,11 @@
 ---
-title: Connect Copilot Cowork to a line-of-business API that uses an API key
+title: Build a Copilot Cowork plugin for a line-of-business API that uses an API key
 description: Use Microsoft Entra single sign-on and an Entra-protected MCP endpoint to give Copilot Cowork access to a line-of-business API, without putting secrets in your plugin.
 ms.date: 10/13/2026
 ms.topic: how-to
 ---
 
-# Connect Copilot Cowork to a line-of-business API that uses an API key
+# Build a Copilot Cowork plugin for a line-of-business API that uses an API key
 
 **Applies to:** Microsoft 365 Copilot
 
