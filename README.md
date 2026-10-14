@@ -13,6 +13,9 @@ Cowork authenticates users through **Microsoft Entra SSO client ID registration*
 
 This article set uses a fictional **Contoso Catalog** LOB API. Substitute your own service contract and organization. It targets a single organization in Azure public cloud and read-only, bounded operations. Any signed-in user in that organization who consents can use the connector; to narrow access, see [Limit who can use the connector](configure-secretless-sso.md#optional-limit-who-can-use-the-connector).
 
+> [!TIP]
+> For a condensed, single-page version of this pattern, see [Build a Copilot Cowork plugin for a line-of-business API that uses an API key](connect-cowork-to-lob-api.md). The articles below provide the full detail.
+
 ## When to use this pattern
 
 Cowork connectors currently authenticate with `OAuthPluginVault` (Entra SSO or OAuth), dynamic client registration, or no authentication. [API-key authentication isn't available in Cowork yet](https://learn.microsoft.com/en-us/microsoft-365/copilot/cowork/cowork-plugin-development). A backend that only accepts an API key therefore needs an Entra-protected MCP facade that Cowork can call with a user token.

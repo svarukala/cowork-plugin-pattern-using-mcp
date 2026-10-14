@@ -1,5 +1,5 @@
 {
-  "checkedAtUtc": "2026-10-07T14:18:15.732003+00:00",
+  "checkedAtUtc": "2026-10-13T21:47:31.926300+00:00",
   "kind": "offline-document-and-integration-example-validation",
   "sdkVersion": "1.26.0",
   "networkCalls": 0,
@@ -51,6 +51,12 @@
     "configure-secretless-sso.md: local link examples/apim-policy.xml",
     "configure-secretless-sso.md: local link build-and-deploy.md",
     "configure-secretless-sso.md: local link package-and-validate.md",
+    "connect-cowork-to-lob-api.md: Learn-style frontmatter",
+    "connect-cowork-to-lob-api.md: required metadata",
+    "connect-cowork-to-lob-api.md: local link diagrams/cowork-mcp-data-flow.svg",
+    "connect-cowork-to-lob-api.md: local link examples/catalog_tools.py",
+    "connect-cowork-to-lob-api.md: local link examples/apim-policy.xml",
+    "connect-cowork-to-lob-api.md: local link examples/manifest.example.json",
     "operate-and-troubleshoot.md: Learn-style frontmatter",
     "operate-and-troubleshoot.md: required metadata",
     "package-and-validate.md: Learn-style frontmatter",
@@ -66,6 +72,7 @@
     "README.md: required metadata",
     "README.md: local link configure-secretless-sso.md#optional-limit-who-can-use-the-connector",
     "README.md: heading anchor optional-limit-who-can-use-the-connector",
+    "README.md: local link connect-cowork-to-lob-api.md",
     "README.md: local link configure-secretless-sso.md",
     "README.md: local link build-and-deploy.md",
     "README.md: local link package-and-validate.md",
@@ -85,6 +92,7 @@
     "Fenced JSON examples parse",
     "build-and-deploy.md: no removed allowlist, role, Blob, or legacy naming",
     "configure-secretless-sso.md: no removed allowlist, role, Blob, or legacy naming",
+    "connect-cowork-to-lob-api.md: no removed allowlist, role, Blob, or legacy naming",
     "operate-and-troubleshoot.md: no removed allowlist, role, Blob, or legacy naming",
     "package-and-validate.md: no removed allowlist, role, Blob, or legacy naming",
     "README.md: no removed allowlist, role, Blob, or legacy naming",
@@ -128,5 +136,5 @@
     "cowork-mcp-network: accessible SVG role",
     "cowork-mcp-network: SVG and PNG dimensions match"
   ],
-  "checkCount": 119
+  "checkCount": 127
 }
